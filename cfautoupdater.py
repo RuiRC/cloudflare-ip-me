@@ -41,6 +41,7 @@ while True:
 
     # This loop checks your live IP every 5 minutes to make sure that it's the same one as set in your DNS record
     while currentactualip == current_set_ip:
+        print('Ip Still Same')
         time.sleep(300) # Wait for 300 seconds (5 minutes)
         currentip = requests.get("https://api.ipify.org?format=json") # Then it checks if your IP is still the same or not.
         ipcheck_status = currentip.status_code
